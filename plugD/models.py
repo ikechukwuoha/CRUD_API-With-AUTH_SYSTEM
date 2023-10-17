@@ -6,7 +6,7 @@ import uuid
 
 
 class Project(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    #id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     project_name = models.CharField(max_length=500)
     file_number = models.CharField(max_length=600)
     updated_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='update_user')
@@ -18,7 +18,7 @@ class Project(models.Model):
 
 
     def __str__(self):
-        return self.file_number
+        return self.project_name
 
 
 
